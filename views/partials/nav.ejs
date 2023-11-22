@@ -1,0 +1,18 @@
+<nav class="d-flex w-100 p-3 container justify-content-between">
+    <h1>Logo</h1>
+    <ul class="d-flex gap-5 list-unstyled">
+        <li>
+            <a class="text-decoration-none" href="<%= user ? '/home' : '/' %>"
+                >Home</a
+            >
+        </li>
+
+        <% if(!user) { %>
+        <li><a class="text-decoration-none" href="/signup">SignUp</a></li>
+        <li><a class="text-decoration-none" href="/signin">SignIn</a></li>
+        <% } else { %>
+        <li><a class="text-decoration-none" href="/profile">Profile</a></li>
+        <li><a class="text-decoration-none" href="/signout">SignOut</a></li>
+        <%}%>
+    </ul>
+</nav>

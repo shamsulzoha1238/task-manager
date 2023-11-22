@@ -1,0 +1,43 @@
+
+
+<%- include('partials/header')%>
+<!--  -->
+<%- include('partials/nav')%>
+<div class="container bg-light p-5">
+    <h1>List Of Pending Todos...</h1>
+    <p>Welcome to <strong> <%= user.username%></strong> profile</p>
+    <hr />
+    <h3>Create Todo <a class="btn btn-primary" href="/createtodo">+</a></h3>
+    <ul class="list-group w-50">
+        <% todos.forEach((todo) => { %>
+        <li
+            class="list-group-item border-0 mb-3 d-flex justify-content-between"
+        >
+            <div>
+                <strong class="h4"><%= todo.title%></strong>
+                <br />
+                <span class="h6 text-muted"
+                    ><%= todo.createdAt.toLocaleDateString() %></span
+                >
+                <br />
+
+                <span class="h5"> <%= todo.description %> </span>
+            </div>
+            <span>
+                <a
+                    class="text-decoration-none"
+                    href="/updatetodo/<%= todo._id%>"
+                    >✏️</a
+                >
+                <a
+                    class="text-decoration-none"
+                    href="/deletetodo/<%= todo._id%>"
+                    >❌</a
+                >
+            </span>
+        </li>
+        <%})%>
+    </ul>
+</div>
+
+<%- include('partials/footer')%>

@@ -1,0 +1,28 @@
+<%- include('partials/header')%>
+<!--  -->
+<%- include('partials/nav')%>
+<form class="m-auto w-25 mt-5 " action="/signin" method="post">
+    <h1 class="mb-4">Sign-In Page</h1>
+    <input
+        class="form-control mb-3"
+        type="text"
+        placeholder="Enter a name"
+        name="username"
+    />
+
+    <input
+        class="form-control mb-3"
+        type="password"
+        placeholder="Enter a password"
+        name="password"
+    />
+    <p class="text-end">
+        <a href="/get-email">Forget Password ?</a>
+    </p>
+    <button class="btn btn-primary w-50">Sign In</button>
+    <p>Dont't have an account ? <a href="/signup">signup</a></p>
+</form>
+<!-- ------------------------------NENT PAGE---------------------------------------------------------- -->
+
+
+<%- include('partials/footer')%>
